@@ -2,7 +2,11 @@
 	"name": "fcc-learn-npm-package-json",
 	"author": "Rickson",
 	"description": "A project that does something awesome",
-	"keywords": [ "freecodecamp", "related", "words" ],
+	"keywords": [
+		"freecodecamp",
+		"related",
+		"words"
+	],
 	"version": "1.0.0",
 	"license": "MIT",
 	"dependencies": {
