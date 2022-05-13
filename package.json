@@ -1,5 +1,7 @@
 {
 	"name": "fcc-learn-node-with-express",
+	"author": "Rickson",
+	"description": "Basic Node and Express",
 	"version": "0.1.0",
 	"dependencies": {
 		"express": "^4.14.0",
