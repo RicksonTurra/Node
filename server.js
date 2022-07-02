@@ -32,7 +32,7 @@ app.use("/public", middleFunc);
 
 app.get("/json", (req, res) => {
   res.json({
-    message: "Hello json"
+    "message": "Hello json"
   });
 });
 
