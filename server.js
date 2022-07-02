@@ -28,7 +28,7 @@ app.get("/", function(req, res) {
   res.sendFile(absolutePath);
 });
 
-app.use("/public", middleFunc());
+app.use("/public", middleFunc);
 
 
 var port = process.env.PORT || 3000;
