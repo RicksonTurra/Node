@@ -8,6 +8,8 @@ var myApp = require('./myApp');
 var express = require('express');
 var app = express();
 var absolutePath = __dirname + "/views/index.html"
+var middlePath = __dirname + "/public"
+var middleFunc = express.static(middlePath)
 
 if (!process.env.DISABLE_XORIGIN) {
   app.use(function(req, res, next) {
@@ -25,6 +27,9 @@ if (!process.env.DISABLE_XORIGIN) {
 app.get("/", function(req, res) {
   res.sendFile(absolutePath);
 });
+
+app.use("/public", middleFunc());
+
 
 var port = process.env.PORT || 3000;
 bGround.setupBackgroundApp(app, myApp, __dirname).listen(port, function(){
