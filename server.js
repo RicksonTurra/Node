@@ -30,18 +30,6 @@ app.get("/", function(req, res) {
 
 app.use("/public", middleFunc);
 
-var response = "Hello json"
-
-if (process.env.MESSAGE_STYLE === "uppercase"){
-  response = response.toUpperCase();
-}
-
-app.get("/json", (req, res) => {
-  res.json({
-    "message": response
-  });
-});
-
 
 var port = process.env.PORT || 3000;
 bGround.setupBackgroundApp(app, myApp, __dirname).listen(port, function(){
