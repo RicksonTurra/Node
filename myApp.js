@@ -12,7 +12,15 @@ app.get("/json", (req, res) => {
         response.message = response.message.toUpperCase();
         }
     res.json(response)
-    });
+});
+
+app.use(function middleware(req, res, next) {
+    // Do something
+    var string = req.method + " " + req.path + " - " + req.ip;
+    // Call the next function in line:
+    console.log(string)
+    next();
+  });
 
 
 
