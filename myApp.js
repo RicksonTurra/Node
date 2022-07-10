@@ -5,13 +5,15 @@ let app = express();
 
 console.log("Hello World");
 
-app.get('/:word/echo', (req, res) => {
-  let {param1} = req.params.word;
-
+app.get("/:word/echo", (req, res) => {
+  const param1 = req.params.word;
+  
   res.json({
     echo: param1
   });
-})
+}
+)
+
 
 
 app.get(
@@ -33,13 +35,13 @@ app.get(
     }
   );
   
-app.use(function middleware(req, res, next) {
+/*app.use(function middleware(req, res, next) {
     // Do something
     var string = req.method + " " + req.path + " - " + req.ip;
     // Call the next function in line:
     console.log(string)
     next();
-  });
+  });*/
 
   
 app.get("/json", (req, res) => {
