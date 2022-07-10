@@ -7,9 +7,17 @@ console.log("Hello World");
 
 app.use(bodyParser.urlencoded({extended: false}))
 
+app.post("/name", (req, res) => {
+  const firstName = req.body.first;
+  const lastName = req.body.last;
+  res.json({
+    name: `${firstName} ${lastName}`
+  });
+})
+
 app.get("/name", (req, res)=> {
   const firstName = req.query.first;
-  const  lastName = req.query.last;
+  const lastName = req.query.last;
 
   res.json({
     name: `${firstName} ${lastName}`
