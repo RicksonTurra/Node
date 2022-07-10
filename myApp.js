@@ -22,6 +22,21 @@ app.get("/json", (req, res) => {
     res.json(response)
 });
 
+app.get(
+    "/now",
+    (req, res, next) => {
+      // adding a new property to req object
+      // in the middleware function
+      req.time = new Date().toString();
+      next();
+    },
+    (req, res) => {
+      // accessing the newly added property
+      // in the main function
+      res.send(req.time);
+    }
+  );
+
 
 
 
