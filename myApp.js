@@ -5,9 +5,18 @@ let app = express();
 
 console.log("Hello World");
 
+app.get("/name", (req, res)=> {
+  const firstName = req.query.first;
+  const  lastName = req.query.last;
+
+  res.json({
+    name: `${firstName} ${lastName}`
+  });
+});
+
 app.get("/:word/echo", (req, res) => {
   const param1 = req.params.word;
-  
+
   res.json({
     echo: param1
   });
