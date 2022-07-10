@@ -33,7 +33,11 @@ app.get(
     (req, res) => {
       // accessing the newly added property
       // in the main function
-      res.send(req.time);
+      res.send(
+        {
+            time:req.time
+        }
+        )
     }
   );
 
