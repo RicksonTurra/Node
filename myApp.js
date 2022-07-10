@@ -5,6 +5,15 @@ let app = express();
 
 console.log("Hello World");
 
+app.get('/:word/echo', (req, res) => {
+  let {param1} = req.params.word;
+
+  res.json({
+    echo: param1
+  });
+})
+
+
 app.get(
     "/now",
     (req, res, next) => {
